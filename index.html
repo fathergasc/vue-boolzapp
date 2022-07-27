@@ -36,17 +36,17 @@
                         </div>
                         <div class="search_bar d-flex justify-content-center p-1">
                             <span id="search_icon" class="p-1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input id="search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="search">
                         </div>
                         <div class="contacts">
 
                             <!-- v-for to create the contacts list -->
-                            <div v-for="(item, index) in contacts" :class="(currentActive == index)? 'active':''" class="contact d-flex align-items-center ps-3" @click="currentActive = index">
+                            <div v-for="(item, index) in filteredContacts" :class="(currentActive == index)? 'active':''" :class="(item.visible == false)? 'd-none':''" class="contact d-flex align-items-center ps-3" @click="currentActive = index">
                                 <div class="contact_profile_pic">
                                     <img :src="'img/avatar' + item.avatar + '.jpg'" :alt="'Foto Profilo di ' + item.name">
                                 </div>
                                 <div class="contact_info ps-3">
-                                    <span class="d-block fw-semibold fs-6">{{item.name}}</span>
+                                    <span class="contact_to_filter d-block fw-semibold fs-6">{{item.name}}</span>
                                     <span class="fs_14 text-black-50">Ultimo messaggio inviato</span>
                                     <span class="last_message_time fs_11 text-black-50">12:00</span>
                                 </div>

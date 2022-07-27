@@ -166,7 +166,10 @@ const app = new Vue({
         ],
       },
     ],
+    search: "",
+    
   },
+  
   methods: {
     sendMessage() {
       if (this.newMessage.length > 0) {
@@ -179,13 +182,19 @@ const app = new Vue({
       }
     },
     okAnswer() {
-        setTimeout(() => {
-            this.contacts[this.currentActive].messages.push({
-                message: "OK!",
-                status: "received",
-            });
-        }, 1000);
+      setTimeout(() => {
+        this.contacts[this.currentActive].messages.push({
+          message: "OK!",
+          status: "received",
+        });
+      }, 1000);
+    },
+  },
+  computed: {
+    filteredContacts: function() {
+        return this.contacts.filter((contact) => {
+            return contact.name.toLowerCase().match(this.search.toLowerCase());
+        });
     }
     },
-});
-
+})
