@@ -1,6 +1,7 @@
 const app = new Vue({
   el: "#app",
   data: {
+    newMessage: "",
     currentActive: 0,
     contacts: [
       {
@@ -166,4 +167,25 @@ const app = new Vue({
       },
     ],
   },
+  methods: {
+    sendMessage() {
+      if (this.newMessage.length > 0) {
+        this.contacts[this.currentActive].messages.push({
+          message: this.newMessage,
+          status: "sent",
+        });
+        this.newMessage = "";
+        this.okAnswer();
+      }
+    },
+    okAnswer() {
+        setTimeout(() => {
+            this.contacts[this.currentActive].messages.push({
+                message: "OK!",
+                status: "received",
+            });
+        }, 1000);
+    }
+    },
 });
+

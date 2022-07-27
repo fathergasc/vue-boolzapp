@@ -36,7 +36,7 @@ body {
     background-color: #00a884;
 }
 
-.container, .row {
+.container-lg, .row {
     height: 95vh;
     min-width: 83%;
     background-color: #fafafa;
@@ -47,10 +47,15 @@ body {
     padding-left: 0;
 }
 
+.row {
+    flex-wrap: nowrap;
+}
+
 /* LEFT MENU */
 
 #left_menu {
     height: 100%;
+    min-width: 280px;
 }
 
 /* HEADER LEFT */
@@ -183,6 +188,9 @@ body {
     height: 100%;
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
+    overflow-y: scroll;
+    min-width: 350px;
+    overflow: auto;
 }
 
 .header_right {
@@ -191,9 +199,11 @@ body {
 }
 
 .convo {
-    width: 80%;
+    width: 100%;
     height: calc(100% - 120px);
     margin: 0 auto;
+    padding: 0 50px;
+    overflow: auto;
 }
 
 .message {
@@ -250,6 +260,7 @@ body {
 
 
 /* DEBUG RULES */
+
 
 
 
