@@ -70,11 +70,11 @@ body {
     cursor: pointer;
 }
 
-.header_left_icons {
+.header_left_icons, .header_right_icons {
     font-size: 20px;
 }
 
-.header_left_icons a {
+.header_left_icons a, .header_right_icons a, .footer_icons a{
     color: #b1b1b1;
 }
 
@@ -144,7 +144,6 @@ body {
 
 .contact_profile_pic img {
     height: 100%;
-    width: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -154,11 +153,12 @@ body {
 .contact_info {
     width: 100%;
     position: relative;
+    line-height: 20px;
 }
 
 .last_message_time {
     position: absolute;
-    top: 5px;
+    top: 0;
     right: 10px;
 }
 
@@ -171,11 +171,13 @@ body {
 
 
 
+
 /* MESSAGE WINDOW */
 
 #message_window {
     height: 100%;
-    background-color: violet;
+    background-image: url(../img/mine.jpg);
+    background-repeat: repeat;
 }
 
 .header_right {
@@ -189,15 +191,60 @@ body {
     margin: 0 auto;
 }
 
+.message {
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px 0;
+    max-width: 45%;
+    position: relative;
+}
+
+.message_text {
+    padding: 15px;
+}
+
+.message.sent {
+    background-color: #d5f9ba;
+}
+
+.message_row.sent {
+    justify-content: end;
+}
+
+
+.timestamp {
+    height: 100%;
+    color: #b1b1b1;
+}
+
+/* FOOTER */
+
 .footer_right {
     height: 60px;
     background-color: #eaeaea;
 }
 
+#send_text {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#send_text:focus {
+    outline: none;
+}
+
+.footer_icons {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* DEBUG RULES */
 
-.debug .convo {
-    background-color: darkgreen;
-}
 
 
