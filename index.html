@@ -9,93 +9,96 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Boolzapp</title>
     </head>
-    <body id="app" class="d-flex align-items-center">
-        <div id="bg_header"></div>
-        <div class="container debug">
-            <div class="row">
-                <div id="left_menu" class="col-4">
-                    <div class="header_left d-flex align-items-center justify-content-between">
-                        <div class="profile_pic d-flex justify-content-center align-items-center ms-3">
-                            <img class="ms-5" src="img/avatar_io.jfif" alt="Foto Profilo">
-                            <span class="mx-2">Andrea</span>
-                        </div>
-                        <div class="header_left_icons d-flex align-items-center">
-                            <a href="#"><i class="fa-solid fa-circle-notch px-3"></i></a>
-                            <a href="#"><i class="fa-solid fa-message px-3"></i></a>
-                            <a href="#"><i class="fa-solid fa-ellipsis-vertical px-3 me-3"></i></a>
-                        </div>
-                    </div>
-                    <div class="alert_mute d-flex align-items-center ps-3">
-                        <div class="alert_left d-flex justify-content-center align-items-center"><i class="fa-solid fa-bell-slash"></i></div>
-                        <div class="alert_right ps-3">
-                            <span class="d-block fw-semibold">Ricevi notifiche di nuovi messaggi</span>
-                            <a class="text-muted" href="#"><span >Attiva notifiche desktop</span></a>
-                        </div>
-                        
-                    </div>
-                    <div class="search_bar d-flex justify-content-center p-1">
-                        <span id="search_icon" class="p-1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
-                    </div>
-                    <div class="contacts">
-                        <div class="contact d-flex align-items-center ps-3 active">
-                            <div class="contact_profile_pic">
-                                <img src="img/avatar_1.jpg" alt="Foto Profilo di">
+    <body class="d-flex align-items-center">
+        <div id="app">
+            <div id="bg_header"></div>
+            <div class="container debug">
+                <div class="row">
+                    <div id="left_menu" class="col-4">
+                        <div class="header_left d-flex align-items-center justify-content-between">
+                            <div class="profile_pic d-flex justify-content-center align-items-center ms-3">
+                                <img class="ms-5" src="img/avatar_io.png" alt="Foto Profilo">
+                                <span class="mx-2">Andrea</span>
                             </div>
-                            <div class="contact_info ps-3">
-                                <span class="d-block fw-semibold fs-6">Michele</span>
-                                <span class="fs_14 text-black-50">Ultimo messaggio inviato</span>
-                                <span class="last_message_time fs_11 text-black-50">12:00</span>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-
-                <div id="message_window" class="col">
-                    <div class="header_right d-flex align-items-center ps-3">
-                            <div class="contact_profile_pic">
-                                <img src="img/avatar_1.jpg" alt="Foto Profilo di">
-                            </div>
-                            <div class="contact_info ps-3">
-                                <span class="d-block fw-semibold fs-6">Michele</span>
-                                <span class="fs_14 text-black-50">Ultimo accesso oggi alle 12:00</span>
-                            </div>
-                           
-                            <div class="header_right_icons d-flex align-items-center">
-                                <a href="#"><i class="fa-solid fa-magnifying-glass px-3"></i></a>
-                                <a href="#"><i class="fa-solid fa-paperclip px-3"></i></a>
+                            <div class="header_left_icons d-flex align-items-center">
+                                <a href="#"><i class="fa-solid fa-circle-notch px-3"></i></a>
+                                <a href="#"><i class="fa-solid fa-message px-3"></i></a>
                                 <a href="#"><i class="fa-solid fa-ellipsis-vertical px-3 me-3"></i></a>
                             </div>
-                
+                        </div>
+                        <div class="alert_mute d-flex align-items-center ps-3">
+                            <div class="alert_left d-flex justify-content-center align-items-center"><i class="fa-solid fa-bell-slash"></i></div>
+                            <div class="alert_right ps-3">
+                                <span class="d-block fw-semibold">Ricevi notifiche di nuovi messaggi</span>
+                                <a class="text-muted" href="#"><span >Attiva notifiche desktop</span></a>
+                            </div>
+                            
+                        </div>
+                        <div class="search_bar d-flex justify-content-center p-1">
+                            <span id="search_icon" class="p-1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                        <div class="contacts">
+
+                            <!-- v-for to create the contacts list -->
+                            <div v-for="item in contacts" class="contact d-flex align-items-center ps-3">
+                                <div class="contact_profile_pic">
+                                    <img :src="'img/avatar' + item.avatar + '.jpg'" :alt="'Foto Profilo di ' + item.name">
+                                </div>
+                                <div class="contact_info ps-3">
+                                    <span class="d-block fw-semibold fs-6">{{item.name}}</span>
+                                    <span class="fs_14 text-black-50">Ultimo messaggio inviato</span>
+                                    <span class="last_message_time fs_11 text-black-50">12:00</span>
+                                </div>
+                            </div>    
+                        </div>
                     </div>
-                    <div class="convo py-5">
 
-                        <div class="message_row sent d-flex">
-                            <div class="message sent d-flex justify-content-between">
-                                <div class="message_text d-inline-block">Hai portato a spasso il cane?</div> 
-                                <div class="timestamp px-2 fs_11 d-flex align-items-end">15:30</div>
+                    <div id="message_window" class="col">
+                        <div class="header_right d-flex align-items-center ps-3">
+                                <div class="contact_profile_pic">
+                                    <img src="img/avatar_1.jpg" alt="Foto Profilo di">
+                                </div>
+                                <div class="contact_info ps-3">
+                                    <span class="d-block fw-semibold fs-6">Michele</span>
+                                    <span class="fs_14 text-black-50">Ultimo accesso oggi alle 12:00</span>
+                                </div>
+                            
+                                <div class="header_right_icons d-flex align-items-center">
+                                    <a href="#"><i class="fa-solid fa-magnifying-glass px-3"></i></a>
+                                    <a href="#"><i class="fa-solid fa-paperclip px-3"></i></a>
+                                    <a href="#"><i class="fa-solid fa-ellipsis-vertical px-3 me-3"></i></a>
+                                </div>
+                    
+                        </div>
+                        <div class="convo py-5">
+
+                            <div class="message_row sent d-flex">
+                                <div class="message sent d-flex justify-content-between">
+                                    <div class="message_text d-inline-block">Hai portato a spasso il cane?</div> 
+                                    <div class="timestamp px-2 fs_11 d-flex align-items-end">15:30</div>
+                                </div>
+                            </div>
+
+                            <div class="message_row d-flex">
+                                <div class="message d-flex justify-content-between">
+                                    <div class="message_text d-inline-block">Ricordati di stendere i panni</div> 
+                                    <div class="timestamp px-2 fs_11 d-flex align-items-end">15:50</div>
+                                </div>
+                            </div>
+
+                            <div class="message_row d-flex">
+                                <div class="message d-flex justify-content-between">
+                                    <div class="message_text d-inline-block">Tutto fatto!</div> 
+                                    <div class="timestamp px-2 fs_11 d-flex align-items-end">16:03</div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="message_row d-flex">
-                            <div class="message d-flex justify-content-between">
-                                <div class="message_text d-inline-block">Ricordati di stendere i panni</div> 
-                                <div class="timestamp px-2 fs_11 d-flex align-items-end">15:50</div>
-                            </div>
+                        <div class="footer_right d-flex justify-content-between align-items-center p-3">
+                            <div class="footer_icons"><a href="#"><i class="fa-solid fa-face-smile"></i></a></div>
+                            <input id="send_text" type="text" class="col-7">
+                            <div class="footer_icons"><a href="#"><i class="fa-solid fa-microphone"></i></a></div>
                         </div>
-
-                        <div class="message_row d-flex">
-                            <div class="message d-flex justify-content-between">
-                                <div class="message_text d-inline-block">Tutto fatto!</div> 
-                                <div class="timestamp px-2 fs_11 d-flex align-items-end">16:03</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer_right d-flex justify-content-between align-items-center p-3">
-                        <div class="footer_icons"><a href="#"><i class="fa-solid fa-face-smile"></i></a></div>
-                        <input id="send_text" type="text" class="col-7">
-                        <div class="footer_icons"><a href="#"><i class="fa-solid fa-microphone"></i></a></div>
                     </div>
                 </div>
             </div>
