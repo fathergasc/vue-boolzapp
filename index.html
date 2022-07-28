@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="contact_info ps-3">
                                     <span class="d-block fw-semibold fs-6">{{contacts[currentActive].name}}</span>
-                                    <span class="last_access fs_14 d-none d-sm-block">Ultimo accesso oggi alle 12:00</span>
+                                    <span class="last_access fs_14 d-none d-sm-block">Ultimo accesso oggi alle {{timeLastReceived(this.contacts[currentActive].messages)}}</span>
                                 </div>
                             
                                 <div class="header_right_icons d-flex align-items-center">

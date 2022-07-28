@@ -202,7 +202,13 @@ const app = new Vue({
     removeMessage(index) {
       this.contacts[this.currentActive].messages.splice(index, 1);
     },
-  
+    timeLastReceived(array) {
+      for (let i = array.length - 1; i >= 0; i--) {
+        if (array[i].status === "received") {
+          return this.textTime(array[i].date);
+        }
+      }
+    }
 
   },
   computed: {
