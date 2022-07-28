@@ -169,7 +169,6 @@ const app = new Vue({
     search: "",
     
   },
-  
   methods: {
     sendMessage() {
       if (this.newMessage.length > 0) {
@@ -191,7 +190,14 @@ const app = new Vue({
     },
     darkModeToggle () {
       document.body.classList.toggle("dark-mode");
+    },
+    textTime(date) {
+      let time = date.split(" ");
+      time = time[1].split(":");
+      time = time[0] + ":" + time[1];
+      return time;
     }
+
   },
   computed: {
     filteredContacts: function() {

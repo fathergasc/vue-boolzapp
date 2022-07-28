@@ -83,7 +83,7 @@
                             <div v-for="(item, index) in contacts[currentActive].messages" class="message_row d-flex" :class="(contacts[currentActive].messages[index].status == 'sent')? 'sent':''">
                                 <div class="message d-flex justify-content-between" :class="(contacts[currentActive].messages[index].status == 'sent')? 'sent':''">
                                     <div class="message_text d-inline-block">{{item.message}}</div> 
-                                    <div class="timestamp px-2 fs_11 d-flex align-items-end">15:30</div>
+                                    <div class="timestamp px-2 fs_11 d-flex align-items-end">{{textTime(item.date)}}</div>
                                 </div>
                             </div>
 
