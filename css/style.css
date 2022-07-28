@@ -104,6 +104,12 @@ body {
     color: #b1b1b1;
 }
 
+.dark-mode .dark_toggle {
+    background-color: #111b21;
+    color: white;
+    background: #111b21;
+}
+
 /* ALERT_MUTE */
 
 .alert_mute {
