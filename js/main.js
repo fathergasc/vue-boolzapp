@@ -196,6 +196,9 @@ const app = new Vue({
       time = time[1].split(":");
       time = time[0] + ":" + time[1];
       return time;
+    },
+    removeMessage(index) {
+      this.contacts[this.currentActive].messages.splice(index, 1);
     }
 
   },

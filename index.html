@@ -83,7 +83,16 @@
                             <div v-for="(item, index) in contacts[currentActive].messages" class="message_row d-flex" :class="(contacts[currentActive].messages[index].status == 'sent')? 'sent':''">
                                 <div class="message d-flex justify-content-between" :class="(contacts[currentActive].messages[index].status == 'sent')? 'sent':''">
                                     <div class="message_text d-inline-block">{{item.message}}</div> 
-                                    <div class="timestamp px-2 fs_11 d-flex align-items-end">{{textTime(item.date)}}</div>
+                                    <div class="timestamp px-2 fs_11 d-flex align-items-end">
+                                        <div class="message_menu nav-item dropdown" data-bs-toggle="dropdown" href="#">
+                                            <i :class="(contacts[currentActive].messages[index].status == 'sent')? 'sent':''" class="fa-solid fa-angle-down px-1"></i>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#" @click="removeMessage(index)">Cancella </a></li>
+                                            </ul>
+                                        </div>
+                                        {{textTime(item.date)}}
+
+                                    </div>
                                 </div>
                             </div>
 
