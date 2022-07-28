@@ -17,20 +17,20 @@
                     <div id="left_menu" class="col-4">
                         <div class="header_left d-flex align-items-center justify-content-between">
                             <div class="profile_pic d-flex justify-content-center align-items-center ms-3">
-                                <img class="ms-5" src="img/avatar_io.png" alt="Foto Profilo">
-                                <span class="mx-2">Andrea</span>
+                                <img class="ms-1 ms-sm-5" src="img/avatar_io.png" alt="Foto Profilo">
+                                <span class="mx-2 d-none d-sm-block">Andrea</span>
                             </div>
                             <div class="header_left_icons d-flex align-items-center">
-                                <a href="#"><i class="fa-solid fa-circle-notch px-3"></i></a>
-                                <a href="#"><i class="fa-solid fa-message px-3"></i></a>
-                                <a href="#"><i class="fa-solid fa-ellipsis-vertical px-3 me-3"></i></a>
+                                <a href="#"><i class="fa-solid fa-circle-notch px-1 px-md-3"></i></a>
+                                <a href="#"><i class="fa-solid fa-message px-1 px-md-3"></i></a>
+                                <a href="#"><i class="fa-solid fa-ellipsis-vertical px-1 me-3 px-md-3"></i></a>
                             </div>
                         </div>
-                        <div class="alert_mute d-flex align-items-center ps-3">
+                        <div class="alert_mute d-flex align-items-center ps-3 justify-content-center justify-content-md-start">
                             <div class="alert_left d-flex justify-content-center align-items-center"><i class="fa-solid fa-bell-slash"></i></div>
                             <div class="alert_right ps-3">
-                                <span class="d-block fw-semibold">Ricevi notifiche di nuovi messaggi</span>
-                                <a class="text-muted" href="#"><span >Attiva notifiche desktop</span></a>
+                                <span class="d-block fw-semibold d-none d-md-block">Ricevi notifiche di nuovi messaggi</span>
+                                <a class="text-muted d-none d-sm-block" href="#"><span >Attiva notifiche desktop</span></a>
                             </div>
                             
                         </div>
@@ -42,13 +42,13 @@
 
                             <!-- v-for to create the contacts list -->
                             <div v-for="(item, index) in filteredContacts" :class="(currentActive == index)? 'active':''" :class="(item.visible == false)? 'd-none':''" class="contact d-flex align-items-center ps-3" @click="currentActive = index">
-                                <div class="contact_profile_pic">
+                                <div class="contact_profile_pic d-none d-sm-block">
                                     <img :src="'img/avatar' + item.avatar + '.jpg'" :alt="'Foto Profilo di ' + item.name">
                                 </div>
                                 <div class="contact_info ps-3">
                                     <span class="contact_to_filter d-block fw-semibold fs-6">{{item.name}}</span>
-                                    <span class="fs_14 text-black-50">Ultimo messaggio inviato</span>
-                                    <span class="last_message_time fs_11 text-black-50">12:00</span>
+                                    <span class="fs_14 text-black-50 d-none d-md-block">Ultimo messaggio inviato</span>
+                                    <span class="last_message_time fs_11 text-black-50 d-none d-sm-block">12:00</span>
                                 </div>
                             </div>    
                         </div>
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="contact_info ps-3">
                                     <span class="d-block fw-semibold fs-6">{{contacts[currentActive].name}}</span>
-                                    <span class="fs_14 text-black-50">Ultimo accesso oggi alle 12:00</span>
+                                    <span class="fs_14 text-black-50 d-none d-sm-block">Ultimo accesso oggi alle 12:00</span>
                                 </div>
                             
                                 <div class="header_right_icons d-flex align-items-center">
@@ -71,7 +71,7 @@
                                 </div>
                     
                         </div>
-                        <div class="convo py-5">
+                        <div class="convo py-5 px-1 px-sm-5">
 
                             <!-- v-for to create the messages list -->
 
