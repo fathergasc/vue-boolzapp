@@ -320,13 +320,13 @@ body {
     font-size: 1.5em;
 }
 
-.fa-solid.fa-angle-down.sent {
+.fa-solid.fa-angle-down {
     display: block;
     visibility: hidden;
     cursor: pointer;
 }
 
-.message_menu:hover .fa-solid.fa-angle-down.sent{
+.message_menu:hover .fa-solid.fa-angle-down{
     visibility: visible;
 }
 

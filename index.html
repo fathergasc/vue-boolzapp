@@ -85,7 +85,7 @@
                                     <div class="message_text d-inline-block">{{item.message}}</div> 
                                     <div class="timestamp px-2 fs_11 d-flex align-items-end">
                                         <div class="message_menu nav-item dropdown" data-bs-toggle="dropdown" href="#">
-                                            <i :class="(contacts[currentActive].messages[index].status == 'sent')? 'sent':''" class="fa-solid fa-angle-down px-1"></i>
+                                            <i class="fa-solid fa-angle-down px-1"></i>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href="#" @click="removeMessage(index)">Cancella </a></li>
                                             </ul>
