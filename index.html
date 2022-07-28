@@ -52,8 +52,8 @@
                                 </div>
                                 <div class="contact_info ps-3">
                                     <span class="contact_to_filter d-block fw-semibold fs-6">{{item.name}}</span>
-                                    <span class="fs_14 last_sent d-none d-md-block">Ultimo messaggio inviato</span>
-                                    <span class="last_message_time fs_11 d-none d-sm-block">12:00</span>
+                                    <span class="fs_14 last_sent d-none d-md-block">{{item.messages[item.messages.length - 1].message}}</span>
+                                    <span class="last_message_time fs_11 d-none d-sm-block">{{textTime(item.messages[item.messages.length - 1].date)}}</span>
                                 </div>
                             </div>    
                         </div>
