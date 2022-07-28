@@ -23,7 +23,12 @@
                             <div class="header_left_icons d-flex align-items-center">
                                 <a href="#"><i class="fa-solid fa-circle-notch px-1 px-md-3"></i></a>
                                 <a href="#"><i class="fa-solid fa-message px-1 px-md-3"></i></a>
-                                <a href="#"><i class="fa-solid fa-ellipsis-vertical px-1 me-3 px-md-3"></i></a>
+                                <a class="nav-item dropdown" data-bs-toggle="dropdown" href="#">
+                                    <i class="fa-solid fa-ellipsis-vertical px-1 me-3 px-md-3"></i>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#" @click="darkModeToggle">Tema Dark/Light</a></li>
+                                    </ul>
+                                </a>
                             </div>
                         </div>
                         <div class="alert_mute d-flex align-items-center ps-3 justify-content-center justify-content-md-start">
@@ -47,8 +52,8 @@
                                 </div>
                                 <div class="contact_info ps-3">
                                     <span class="contact_to_filter d-block fw-semibold fs-6">{{item.name}}</span>
-                                    <span class="fs_14 text-black-50 d-none d-md-block">Ultimo messaggio inviato</span>
-                                    <span class="last_message_time fs_11 text-black-50 d-none d-sm-block">12:00</span>
+                                    <span class="fs_14 last_sent d-none d-md-block">Ultimo messaggio inviato</span>
+                                    <span class="last_message_time fs_11 d-none d-sm-block">12:00</span>
                                 </div>
                             </div>    
                         </div>

@@ -189,6 +189,9 @@ const app = new Vue({
         });
       }, 1000);
     },
+    darkModeToggle () {
+      document.body.classList.toggle("dark-mode");
+    }
   },
   computed: {
     filteredContacts: function() {

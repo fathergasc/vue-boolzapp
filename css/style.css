@@ -23,6 +23,10 @@ body {
     width: 100%;
 }
 
+.dark-mode {
+    background-color: #0e1113;
+}
+
 #app {
     width: 100%;
 }
@@ -34,6 +38,10 @@ body {
     top: 0;
     z-index: -1;
     background-color: #00a884;
+}
+
+.dark-mode #bg_header {
+    display: none;
 }
 
 .container-lg, .row {
@@ -65,10 +73,18 @@ body {
     background-color: #eaeaea;
     border-right: 1px solid #afadad;
 }
+
+.dark-mode .header_left {
+    background-color: #202c33;
+} 
 .profile_pic {
     height: 40px;
     min-width: 40px;
     max-width: 40px;
+}
+
+.dark-mode .profile_pic {
+    color: white;
 }
 
 .profile_pic img {
@@ -95,6 +111,11 @@ body {
     background-color: #53bdeb;
 }
 
+.dark-mode .alert_mute {
+    background-color: #182229;
+}
+
+
 .alert_left {
     height: 50px;
     min-width: 50px;
@@ -105,11 +126,25 @@ body {
     cursor: pointer;
 }
 
+.dark-mode .alert_left {
+    background-color: #53bdeb;
+    color: black;
+}
+
+.dark-mode .alert_right {
+    color: white;
+}
+
 /* SEARCH BAR */
 
 .search_bar {
     height: 40px;
 }
+
+.dark-mode .search_bar {
+    background-color: #111b21;
+}
+
 #search {
     height: 30px;
     width: 100%;
@@ -117,6 +152,11 @@ body {
     box-shadow: 1px 1px 1px lightgray;
     padding-left: 10px;
     background-color: white;
+}
+
+.dark-mode #search, .dark-mode #search_icon {
+    background-color: #202c33;
+    box-shadow: 1px 1px 1px rgb(75, 74, 74);
 }
 
 #search:focus {
@@ -139,13 +179,22 @@ body {
 .contacts {
     height: calc(100% - 190px);
     background-color: white;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 
 .contact {
     height: 70px;
     border-bottom: 1px solid #ece8e8;
     cursor: pointer;
+}
+
+.dark-mode .contact {
+    border-bottom: 1px solid rgb(39, 39, 39);
+}
+
+.dark-mode .contact, .dark-mode .contacts {
+    background-color: #111b21;
+    color: white;
 }
 
 .contact_profile_pic {
@@ -167,21 +216,31 @@ body {
     line-height: 20px;
 }
 
+.last_sent {
+    color: rgba(0,0,0,0.5);
+}
+
+.dark-mode .contact_info, .dark-mode .last_sent {
+    color: white;
+}
+
 .last_message_time {
     position: absolute;
     top: 0;
     right: 10px;
+    color: rgba(0,0,0,0.5);
+}
+
+.dark-mode .last_message_time {
+    color: white;
 }
 
 .active {
     background-color: #e9ebeb;
 }
-
-
-
-
-
-
+.dark-mode .active {
+    background-color: #2a3942;
+}
 
 /* MESSAGE WINDOW */
 
@@ -194,10 +253,18 @@ body {
     overflow: auto;
 }
 
+.dark-mode #message_window {
+    background-image: url(../img/mine_dark.jpg);
+}
+
 .header_right {
     height: 60px;
     background-color: #eaeaea;
 }
+
+.dark-mode .header_right {
+    background-color: #202c33;
+} 
 
 .convo {
     width: 100%;
@@ -214,12 +281,21 @@ body {
     position: relative;
 }
 
+.dark-mode .message {
+    background-color: #202c33;
+    color: white;
+}
+
 .message_text {
     padding: 8px;
 }
 
 .message.sent {
     background-color: #d5f9ba;
+}
+
+.dark-mode .message.sent {
+    background-color: #005c4b;
 }
 
 .message_row.sent {
@@ -238,6 +314,10 @@ body {
     height: 60px;
     background-color: #eaeaea;
 }
+
+.dark-mode .footer_right {
+    background-color: #202c33;
+} 
 
 #send_text {
     width: 90%;
@@ -258,8 +338,28 @@ body {
     align-items: center;
 }
 
+/* SCROLLBAR STYLES */
+::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: rgb(163, 161, 161); }
+::-webkit-scrollbar-track {  background-color: #acabab;}
+::-webkit-scrollbar-track-piece { background-color: rgb(218, 216, 216);}
+::-webkit-scrollbar-thumb { height: 50px; background-color: rgb(163, 161, 161); border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #acabab;}
+::-webkit-resizer { background-color: #666;}
+
+.dark-mode ::-webkit-scrollbar { width: 8px; height: 3px;}
+.dark-mode ::-webkit-scrollbar-button {  background-color: #666; }
+.dark-mode ::-webkit-scrollbar-track {  background-color: #646464;}
+.dark-mode ::-webkit-scrollbar-track-piece { background-color: #000;}
+.dark-mode ::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+.dark-mode ::-webkit-scrollbar-corner { background-color: #646464;}
+.dark-mode ::-webkit-resizer { background-color: #666;}
+
 
 /* DEBUG RULES */
+
+
+
 
 
 
