@@ -173,6 +173,7 @@ const app = new Vue({
     sendMessage() {
       if (this.newMessage.length > 0) {
         this.contacts[this.currentActive].messages.push({
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           message: this.newMessage,
           status: "sent",
         });
@@ -183,6 +184,7 @@ const app = new Vue({
     okAnswer() {
       setTimeout(() => {
         this.contacts[this.currentActive].messages.push({
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           message: "OK!",
           status: "received",
         });
@@ -199,7 +201,8 @@ const app = new Vue({
     },
     removeMessage(index) {
       this.contacts[this.currentActive].messages.splice(index, 1);
-    }
+    },
+  
 
   },
   computed: {
