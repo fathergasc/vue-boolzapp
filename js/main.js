@@ -214,7 +214,7 @@ const app = new Vue({
   computed: {
     filteredContacts: function() {
         return this.contacts.filter((contact) => {
-            return contact.name.toLowerCase().match(this.search.toLowerCase());
+            return contact.name.toLowerCase().match(this.search.toLowerCase());  //.includes() is also possible
         });
     }
     },
